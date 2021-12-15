@@ -5,6 +5,8 @@ import { Hello } from './ex01.js'
 import { Calculator } from './ex02-lifting-state-up';
 import { WelcomeDialog } from './ex03-composition';
 import { SignUpDialog } from './ex03-composition';
+import { Hook } from './ex05-hook';
+import * as Ctx from './ex06-context';
 
 //const element = (<><Game /><Hello /></>);
 
@@ -39,7 +41,19 @@ import { SignUpDialog } from './ex03-composition';
 //   document.getElementById('mydiv')
 // );
 
-const element = (<SignUpDialog />);
+// const element = (<SignUpDialog />);
+// ReactDOM.render(
+//   element,
+//   document.getElementById('mydiv')
+// );
+
+// const element = (<Hook />);
+// ReactDOM.render(
+//   element,
+//   document.getElementById('mydiv')
+// );
+
+const element = (<Ctx.App />);
 ReactDOM.render(
   element,
   document.getElementById('mydiv')
