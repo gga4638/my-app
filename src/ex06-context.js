@@ -1,4 +1,4 @@
-import {React, useContext} from "react";
+import {React, useContext, createContext, useState} from "react";
 
 const themes = {
     light: {
@@ -15,36 +15,34 @@ const themes = {
     }
 };
 
-const ThemeContext = React.createContext('red');
+console.log(themes['red']);
+const ThemeContext = createContext('dark');
 
 export function App() {
-    //return <Toolbar theme={themes.dark} />;
+    const [color, setColor] = useState(themes.dark);
     return (
-        <ThemeContext.Provider value="dark">
+        <ThemeContext.Provider value={color}>
             <Toolbar />
         </ThemeContext.Provider>
     );
 }
 
-function Toolbar(props) {
+function Toolbar() {
     return (
         <div>
             <ThemedButton />
         </div>
     );
-
-    return (
-        <div>
-            <ThemedButton theme={props.theme} />
-        </div>
-    );
 }
 
-function ThemedButton(props) {
+function ThemedButton() {
     const theme = useContext(ThemeContext);
+    console.log("theme : " + theme.foreground)
 
     return (
-        <button style={{background: theme.background, color: theme.foreground}}>
+        <button 
+            style={{background: theme.background, color: theme.foreground}}
+        >
             I am styled by tyeme context!
         </button>
     );
