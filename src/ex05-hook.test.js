@@ -1,9 +1,10 @@
 import React from "react";
-import { ReactDOM } from "react";
+import ReactDOM from "react-dom";
 import { act } from 'react-dom/test-utils';
-import { Counter } from "./ex05-hook";
+import { unmountComponentAtNode } from "react-dom";
+import { Example } from "./ex05-hook";
 
-let container;
+let container = null;
 
 beforeEach(() => {
     container = document.createElement('div');
@@ -11,14 +12,15 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    document.body.remove.removeChild(container);
+    unmountComponentAtNode(container);
+    container.remove();
     container = null;
 });
 
 it('can render and update a counter', () => {
     // 첫 번째 렌더링 및 effect 테스트
     act(() => {
-        ReactDOM.render(<Counter />, container);
+        ReactDOM.render(<Example />, container);
     });
     const button = container.querySelector('button');
     const label = container.querySelector('p');

@@ -10,7 +10,7 @@ function Hook() {
     );
 }
 
-function Example() {
+export function Example() {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
