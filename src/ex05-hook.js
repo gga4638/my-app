@@ -30,7 +30,7 @@ function Example() {
     );
 }
 
-function Counter({initialCount}) {
+export function Counter({initialCount}) {
     const [count, setCount] = useState(initialCount);
     
     return (

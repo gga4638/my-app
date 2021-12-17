@@ -27,7 +27,7 @@ function reducer(state, action) {
     }
 }
 
-function Counter() {
+export function Counter() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
