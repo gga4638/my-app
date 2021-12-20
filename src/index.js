@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Game } from './tictactoe.js'
-import { Hello } from './ex01.js'
+import Hello from './hello';
 import { Calculator } from './ex02-lifting-state-up';
 import { WelcomeDialog } from './ex03-composition';
 import { SignUpDialog } from './ex03-composition';
@@ -9,6 +9,8 @@ import { Hook } from './ex05-hook';
 //import { Hook } from './ex07-reducer';
 import * as Ctx from './ex06-context';
 import Toggle from './toggle';
+import Card from './card';
+import Timer from './timer';
 
 //const element = (<><Game /><Hello /></>);
 
@@ -49,14 +51,15 @@ import Toggle from './toggle';
 //   document.getElementById('mydiv')
 // );
 
-const element = (<Toggle />);
+// const element = (<Ctx.App />);
+// ReactDOM.render(
+  //   element,
+  //   document.getElementById('mydiv')
+  // );
+
+
+const element = (<Timer />);
 ReactDOM.render(
   element,
   document.getElementById('mydiv')
 );
-
-// const element = (<Ctx.App />);
-// ReactDOM.render(
-//   element,
-//   document.getElementById('mydiv')
-// );

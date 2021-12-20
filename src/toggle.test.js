@@ -15,7 +15,7 @@ afterEach(() => {
     container = null;
 });
 
-it("changes value when clicked", () => {
+test("changes value when clicked", () => {
     const onChange = jest.fn();
     act(() => {
         render(<Toggle onChange={onChange} />, container);
@@ -27,7 +27,8 @@ it("changes value when clicked", () => {
     act(() => {
         button.dispatchEvent(new MouseEvent("click", { bubbles: true}));
         // 리액트는 자동으로 이벤트를 루트로 위임하기 때문에 이벤트마다 {bubbles: true}를 전달해야 한다.
-        // 이벤트 버블링
+        // 이벤트 버블링 : 이벤트가 발생했을 때 더 상위의 화면 요소들로 전달되어 가는 특성
+        // 이벤트 버블링 <-> 이벤트 캡처
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
