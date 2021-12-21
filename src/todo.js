@@ -17,7 +17,8 @@ export default function TodoApp() {
             text: text,
             id: Date.now()
         };
-        setItems(items.concat(newItem))
+        setItems(items.concat(newItem));
+        setText('');
     }
 
     return (
@@ -28,6 +29,7 @@ export default function TodoApp() {
                 <label htmlFor="new-todo">
                     What needs to be done?
                 </label>
+                <br />
                 <input 
                     id="new-todo"
                     onChange={handleChange}
@@ -38,5 +40,15 @@ export default function TodoApp() {
                 </button>
             </form>
         </div>
+    );
+}
+
+function TodoList(props) {
+    return (
+        <ul>
+            {props.items.map(item => (
+                <li key={item.id}>{item.text}</li>
+            ))}
+        </ul>
     );
 }

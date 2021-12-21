@@ -8,7 +8,7 @@ export default function Timer() {
     }
     
     useEffect(() => {
-        const timer = setInterval(() => tick(), 1000);
+        const timer = setInterval(tick, 1000);
 
         return () => {
             clearInterval(timer);

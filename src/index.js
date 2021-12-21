@@ -11,6 +11,7 @@ import * as Ctx from './ex06-context';
 import Toggle from './toggle';
 import Card from './card';
 import Timer from './timer';
+import TodoApp from './todo';
 
 //const element = (<><Game /><Hello /></>);
 
@@ -58,7 +59,7 @@ import Timer from './timer';
   // );
 
 
-const element = (<Timer />);
+const element = (<TodoApp />);
 ReactDOM.render(
   element,
   document.getElementById('mydiv')
